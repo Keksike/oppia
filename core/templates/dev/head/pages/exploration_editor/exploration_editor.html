@@ -241,31 +241,6 @@
       </div>
     </script>
 
-    <script type="text/ng-template" id="modals/saveVersionMismatch">
-      <div class="modal-header">
-        <h3>Error Saving Exploration</h3>
-      </div>
-
-      <div class="modal-body">
-        <p>
-          Sorry! Someone else has saved a new version of this exploration, so
-          your pending changes cannot be saved.
-        </p>
-
-        <p ng-show="hasLostChanges">
-          The lost changes are displayed below. You may want to copy and
-          paste these changes before discarding them.
-        </p>
-
-        <div class="oppia-lost-changes" ng-bind-html="lostChangesHtml">
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button class="btn btn-default" ng-click="discardChanges()">Discard Changes</button>
-      </div>
-    </script>
-
     <div class="container-fluid oppia-editor-page-container" ng-joy-ride="tutorialInProgress" config="EDITOR_TUTORIAL_OPTIONS" on-finish="onFinishTutorial()" on-skip="onSkipTutorial()">
       <div class="row" ng-if="explorationRightsService.isCloned()">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -356,6 +331,7 @@
   {% include 'pages/exploration_editor/post_publish_modal_directive.html' %}
   {% include 'pages/exploration_editor/state_diff_modal_directive.html' %}
   {% include 'pages/exploration_editor/welcome_modal_directive.html' %}
+  {% include 'pages/exploration_editor/save_version_mismatch_modal_directive.html' %}
 
   {% include 'pages/exploration_editor/editor_tab/state_graph_visualization_directive.html' %}
 
